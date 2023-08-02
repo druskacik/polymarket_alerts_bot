@@ -7,10 +7,10 @@ export function up(knex) {
             table.string('slug');
             table.string('title').collate('utf8mb4_unicode_ci');
             table.text('description').collate('utf8mb4_unicode_ci');
-            table.timestamp('provider_created_at');
+            table.timestamp('provider_created_at').nullable();
             table.string('image_url');
-            table.timestamp('start_date');
-            table.timestamp('end_date');
+            table.timestamp('start_date').nullable();
+            table.timestamp('end_date').nullable();
             table.boolean('active').defaultTo(true);
             table.timestamp('created_at').defaultTo(knex.fn.now());
         })
