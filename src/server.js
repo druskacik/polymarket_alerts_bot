@@ -13,8 +13,6 @@ app.get('/', (req, res) => {
     res.status(200).send('ok');
 });
 
-console.log('TELEGRAM_BOT_TOKEN', process.env.TELEGRAM_BOT_TOKEN)
-
 app.use(`/api/telegram${process.env.TELEGRAM_BOT_TOKEN}`, telegramWebhook);
 
 export default app;
